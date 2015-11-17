@@ -1,0 +1,37 @@
+doctype html
+html(lang="en")
+  head
+    title Home
+    link(href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet")
+    link(href="css/style.css" rel="stylesheet")
+  body
+    .container
+      .row.text-center.heading
+        h1 Welcome! Please register or log in.
+      .row
+        .col-xs-3.registerInputs
+          h3 Create an Account:
+          label(for="registerUsernameInput") Username:
+          input(type="text" class="registerUsernameInput")
+          br
+          label(for="registerPasswordInput") Password:
+          input(type="password" class="registerPasswordInput")
+          br
+          label(for="registerConfirmPasswordInput") Confirm Password:
+          input(type="password" class="registerConfirmPasswordInput") 
+          br
+          button.btn.btn-success.register Register 
+        .col-xs-3.loginInputs
+          h3 Already a User? Log In:
+          label(for="usernameInput") Username:
+          input(type="text" class="usernameInput")
+          br
+          label(for="passwordInput") Password:
+          input(type="password" class="passwordInput")
+          br
+          button.btn.btn-success.login Log In
+        .col-xs-3#feedback
+          h4.feedback
+    script(src='bower_components/jquery/dist/jquery.min.js')
+    script(src='js/main.js')
+    script(src='js/profile-actions.js')

@@ -1,0 +1,40 @@
+body {
+  background-color: #90e3a2;
+}
+
+.container {
+  padding: 15px;
+}
+
+.registerInputs, .loginInputs {
+  border: 1px solid #e8d780;
+  border-radius: 4px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+}
+
+label, input, button {
+  margin: 15px;
+}
+
+.registerInputs, .loginInputs {
+  margin: 10px;
+  background-color: #d8ff90;
+}
+
+.heading {
+  margin-bottom: 15px;
+}
+
+.btn {
+  background-color: #a5fffa;
+  border: none;
+  color: #212121;
+}
+
+.btn:active, .btn:hover {
+  background-color: #ffca84;
+  border: none;
+  color: #212121;
+}
