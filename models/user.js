@@ -3,6 +3,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var bcrypt = require('bcryptjs');
+var jwt = require('jwt-simple');
 
 var User;
 
@@ -47,5 +48,25 @@ userSchema.statics.authenticate = function(inputUser, cb){
   });
 };
 
+userSchema.methods.token = function() {
+  var payload = {
+    username: this.username,
+    _id: this._id
+  };
+  var secret = process.env.JWT_SECRET;
+  var token = jwt.encode(payload, secret);
+  return token;
+}
+
 User = mongoose.model('User', userSchema);
 module.exports = User;
+
+
+
+
+
+
+
+
+
+
