@@ -3,6 +3,7 @@
 $(document).ready(init);
 
 function init() {
+  console.log('test')
   $('.register').click(register);
   $('.login').click(login);
 }
@@ -45,14 +46,15 @@ function login() {
     username: username,
     password: password
   })
-  .done(function(savedUser){
-    console.log("Saved User! ", savedUser);
+  .done(function(user){
+    console.log("Logged in! ", user);
+    var userId = user._id;
     $('.feedback').text('');
     $('.feedback').text("You've been logged in!")
     $('.usernameInput').val('');
     $('.passwordInput').val('');
     $('.confirmPasswordInput').val('');
-    window.location.replace('/profiles');
+    window.location.replace(`/profiles`);
   });
 }
 

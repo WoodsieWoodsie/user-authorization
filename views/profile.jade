@@ -2,14 +2,54 @@ doctype html
 html(lang="en")
   head
     title Home
-    link(href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet")
-    link(href="css/style.css" rel="stylesheet")
+    link(href="./bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet")
+    link(href="./css/style.css" rel="stylesheet")
   body
     .container
-      .row.text-center.heading
-        h1 Profile
-        button.btn.btn-warning.logout Log Out
+
+      //- #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
+      //-   .modal-dialog(role='document')
+      //-     .modal-content
+      //-      .modal-header
+      //-         button.close(type='button', data-dismiss='modal', aria-label='Close')
+      //-          span(aria-hidden='true') ×
+      //-        h4#myModalLabel.modal-title Modal title
+      //-       .modal-body
+      //-        | ...
+      //-       .modal-footer
+      //-         button.btn.btn-default(type='button', data-dismiss='modal') Close
+      //-         button.btn.btn-primary(type='button') Save changes      
+
+      .row.heading
+        .col-xs-4.col-xs-offset-4
+          h1 Profile
+          button.btn.btn-warning.logout Log Out
+          button(type="button" data-toggle="modal" data-target="#myModal").btn.btn-success.editProfile Edit Profile
+      .row.userInfo#sampleProfile
+        .col-xs-4.col-xs-offset-4  
+          .media
+            .media-left
+              a(href='#')
+                img.media-object.avatar(src='#{avatar}', alt='')
+            .media-body
+              h3.media-heading.username #{username}
+              h4.name #{name}
+              h4.email #{email}
+              h4.birthday #{birthday}
+              h5.aboutMe #{aboutMe}
+        .col-xs-4.editInfoCol
+          label(for="editName") Edit Name:
+          input(type="text").editName
+          label(for="editEmail") Edit Email:
+          input(type="email").editEmail
+          label(for="editAvatar") Avatar URL:
+          input(type="text").editAvatar
+          label(for="editBirthday") Edit Birthday:
+          input(type="text").editBirthday
+          label(for="editAboutMe") Edit About Me:
+          textarea(name="aboutMe", cols="20", rows="5")
+          button.btn.btn-success.saveEdits Save Edits
       
-    script(src='bower_components/jquery/dist/jquery.min.js')
-    script(src='js/main.js')
-    script(src='js/profile-actions.js')
+    script(src='./bower_components/jquery/dist/jquery.min.js')
+    script(src='./js/main.js')
+    script(src='./js/profile-actions.js')

@@ -9,9 +9,11 @@ var User;
 var userSchema = Schema({
   username: { type: String, required: true, unique: true },
   password: { type: String, required: true },
+  name: String,
   email: String,
-  avatar: String,
-  birthday: Date
+  avatar: {type: String, default: "https://placehold.it/250x250"},
+  birthday: String,
+  aboutMe: String
 });
 
 userSchema.statics.register = function(user, cb) {
