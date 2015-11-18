@@ -47,6 +47,7 @@ function login() {
     password: password
   })
   .done(function(user){
+    localStorage.woodtoken = user.token;
     console.log("Logged in! ", user);
     var userId = user._id;
     $('.feedback').text('');

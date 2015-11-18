@@ -19,12 +19,11 @@ router.post('/login', function(req, res) {
       res.status(400).send(err);
     } else {
       var token = user.token();
-      console.log('token', token);
-      res.cookie('token', token);
-      res.status(err ? 400 : 200).send(err || user);
+      res.send({token: token, user: user})
     }
   });
 });
 
 
 module.exports = router;
+
